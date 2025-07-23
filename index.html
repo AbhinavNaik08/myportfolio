@@ -8,10 +8,12 @@
   <style>
     :root {
       --primary: #1a73e8;
+      --secondary: #ff4081;
       --background: #ffffff;
       --surface: #f1f3f4;
       --text: #202124;
       --subtitle: #5f6368;
+      --highlight: #ffeb3b;
     }
 
     body.dark {
@@ -31,9 +33,9 @@
     }
 
     header {
-      background-color: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 30px 20px 20px;
+      padding: 40px 20px;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: relative;
@@ -41,17 +43,19 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 3em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     header p {
       margin: 10px 0 0;
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     a {
-      color: var(--primary);
+      color: var(--highlight);
       text-decoration: none;
+      font-weight: bold;
     }
 
     .container {
@@ -64,8 +68,8 @@
       margin-bottom: 40px;
       background-color: var(--surface);
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: background-color 0.3s, color 0.3s;
     }
 
@@ -74,6 +78,7 @@
       margin-top: 0;
       border-bottom: 2px solid var(--primary);
       padding-bottom: 5px;
+      font-size: 1.8em;
     }
 
     ul {
@@ -87,6 +92,12 @@
 
     .project {
       margin-bottom: 20px;
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    .project p {
+      margin: 5px 0;
     }
 
     /* Toggle Switch */
@@ -124,13 +135,23 @@
       border-radius: 50%;
       top: 1px;
       left: 1px;
-      background: #1a73e8;
+      background: var(--primary);
       transition: 0.3s;
     }
 
     .toggle-label input[type="checkbox"]:checked::before {
       transform: translateX(20px);
       background: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--primary);
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
@@ -145,24 +166,18 @@
   </div>
   <h1>Abhinav Naik</h1>
   <p>Bengaluru, Karnataka | +91 9082635232 |
-    <a href="mailto:abhinavak.naik@gmail.com" style="color:white;">abhinavak.naik@gmail.com</a> |
-    <a href="https://www.linkedin.com/in/abhinav-naik-306397243" style="color:white;" target="_blank">LinkedIn</a>
+    <a href="mailto:abhinavak.naik@gmail.com">abhinavak.naik@gmail.com</a> |
+    <a href="https://www.linkedin.com/in/abhinav-naik-306397243" target="_blank">LinkedIn</a>
   </p>
 </header>
 
 <div class="container">
 
   <div class="section">
-    <h2>Summary</h2>
+    <h2>About Me</h2>
     <p>
-      Dynamic Full Stack Developer with backend focus. Skilled in Java, Spring Boot, and MySQL. Strong in API design, database integration, and delivering scalable digital products.
+      I am a passionate Full Stack Developer with a keen interest in building scalable web applications. My expertise lies in Java, Spring Boot, and MySQL, and I thrive on solving complex problems and delivering high-quality digital products.
     </p>
-  </div>
-
-  <div class="section">
-    <h2>Education</h2>
-    <p><strong>Presidency University</strong> (Oct 2022 – July 2026)</p>
-    <p>B.Tech in Computer Science Engineering — CGPA: 8.22</p>
   </div>
 
   <div class="section">
@@ -170,51 +185,32 @@
 
     <div class="project">
       <strong>EV Battery Management App</strong>
-      <p>Real-time Android app to monitor EV battery SoC and SoH, with user/admin roles.</p>
+      <p>A real-time Android application designed to monitor the State of Charge (SoC) and State of Health (SoH) of electric vehicle batteries. It features user and admin roles for effective management.</p>
       <ul>
-        <li>Uses Room DB for local storage and BatteryManager API for diagnostics.</li>
-        <li>Material UI design with scalable architecture.</li>
+        <li>Utilizes Room DB for local storage and BatteryManager API for diagnostics.</li>
+        <li>Incorporates Material UI design principles with a scalable architecture.</li>
       </ul>
       <p class="tech-stack">Tech Stack: Android, Java, Room DB</p>
     </div>
 
     <div class="project">
       <strong>Drunk Driving Detection System</strong>
-      <p>Alcohol sensor-based ignition blocker integrated with a Python backend.</p>
+      <p>This project integrates an alcohol sensor-based ignition blocker with a Python backend, providing real-time alerts and auto-lock features to enhance road safety.</p>
       <ul>
-        <li>Enabled real-time alerts and auto-lock features.</li>
-        <li>Tested under simulated driving environments.</li>
+        <li>Tested under simulated driving environments to ensure reliability.</li>
+        <li>Offers a user-friendly interface for monitoring and alerts.</li>
       </ul>
       <p class="tech-stack">Tech Stack: Android, Java, Python</p>
     </div>
 
     <div class="project">
       <strong>Smart Locker System</strong>
-      <p>Dual-access locker using keypad and Bluetooth app with brute-force protection.</p>
+      <p>A dual-access locker system that combines keypad and Bluetooth app functionalities, designed with brute-force protection and future biometric integration capabilities.</p>
       <ul>
-        <li>Designed for future biometric or cloud integration.</li>
+        <li>Focuses on security and user convenience.</li>
       </ul>
       <p class="tech-stack">Tech Stack: ESP-32, IoT</p>
     </div>
-  </div>
-
-  <div class="section">
-    <h2>Volunteering</h2>
-    <p><strong>Operations Volunteer – Bengaluru Comic Con</strong> (Jan 2025 – Ongoing)</p>
-    <ul>
-      <li>Managed crowd and coordinated event zones.</li>
-      <li>Awarded Best Volunteer in operations.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Java Programming – CodeChef</li>
-      <li>Machine Learning & Data Science – Udemy</li>
-      <li>Web Development – Udemy</li>
-      <li>Python (Basic) – HackerRank</li>
-    </ul>
   </div>
 
   <div class="section">
@@ -231,6 +227,10 @@
   </div>
 
 </div>
+
+<footer>
+  <p>&copy; 2023 Abhinav Naik. All rights reserved.</p>
+</footer>
 
 <script>
   const toggle = document.getElementById('theme-toggle');
